@@ -101,7 +101,7 @@ function Slider() {
 </div>
 <div className="overflow-hidden mt-10">
   <div className="flex animate-marquee whitespace-nowrap">
-    {[...Array(6)].map((_, i) => ( // Increase the number of spans
+    {[...Array(60)].map((_, i) => ( // Increase the number of spans
       <span
         key={i}
         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-pixel font-bold mr-10 rounded-xl px-4 py-1"
