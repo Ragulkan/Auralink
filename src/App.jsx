@@ -2,6 +2,8 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Slider from './Slider.jsx';
+import Footer from './Footer.jsx';
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <div className="pt-20">
         <Slider />
       </div>
+      <Footer/>
     </div>
   );
 }
