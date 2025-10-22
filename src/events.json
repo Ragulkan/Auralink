@@ -4,7 +4,8 @@
     "imageSrc": "/nerdathon01.png",
     "title": "Qbitio Nerd-athon",
     "type": "Virtual",
-    "registrationDate": "30th Oct 25"
+    "registrationDate": "30th Oct 25",
+    "web": "/nerdathon01"
   },
   {
     "id": 2,

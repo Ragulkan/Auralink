@@ -10,7 +10,7 @@ function App() {
     <div>
       <Header />
       {/* Add padding-top equal to header height (e.g., h-20 for 80px) */}
-      <div className="pt-20">
+      <div className="pt-28">
         <Slider />
       </div>
       <Footer/>
