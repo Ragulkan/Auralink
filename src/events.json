@@ -5,13 +5,18 @@
     "title": "Qbitio Nerd-athon",
     "type": "Virtual",
     "registrationDate": "30th Oct 25",
-    "web": "/nerdathon01"
+    "web": "/nerdathon",
+    "status": "comingsoon",
+    "total": "300"
   },
   {
-    "id": 2,
+    "id": 1,
     "imageSrc": "/nerdathon01.png",
-    "title": "SkillUp Cohort",
-    "type": "Online",
-    "registrationDate": "30th Oct 25"
+    "title": "Qbitio Nerd-athon",
+    "type": "Virtual",
+    "registrationDate": "30th Oct 25",
+    "web": "/nerdathon",
+    "status": "comingsoon",
+    "total": "300"
   }
 ]

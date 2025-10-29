@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import EventCard from "./EventCard";
 import Nerdathon from "./Nerdathon";
+import Header from "./Header"
 import eventsData from "./events.json";
 
 function Slider() {
@@ -9,14 +10,10 @@ function Slider() {
     "/nerdathon01.png",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showNerdathon, setShowNerdathon] = useState(false);
   const isUserInteracting = useRef(false);
   const sliderRef = useRef(null);
 
-  // Toggle function to show/hide Nerdathon
-  const toggleNerdathon = () => {
-    setShowNerdathon((prev) => !prev);
-  };
+
 
   // Auto-scroll every 3 seconds
   useEffect(() => {
@@ -83,94 +80,120 @@ function Slider() {
   };
 
   return (
-    <>
-      {showNerdathon ? (
-        <Nerdathon />
-      ) : (
+    
         <>
+        <Header/>
+        <div className="relative w-[92%] sm:w-[90%] md:w-[96%] mx-auto mt-4 rounded-2xl overflow-hidden bg-gradient-to-br from-[#0c0024] via-[#180040] to-[#3a0091] shadow-xl flex flex-col md:flex-row items-center justify-between">
+  {/* Left Text Section */}
+  <div className="z-10 md:w-1/2 px-6 sm:px-10 lg:px-14 py-6 md:py-0">
+    <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug">
+      Learn. Build. Grow
+      <br />
+      <span className="block text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#b24cff] to-[#00d4ff] mt-2">
+        TOGETHER
+      </span>
+    </h1>
+
+    <p className="text-gray-200 text-base sm:text-lg mt-4 max-w-md leading-relaxed">
+      Auralinks started with one goal — to make self-growth and tech learning accessible, real, and community-driven.
+
+From free weekend sessions to advanced paid cohorts and startup collaborations, everything we do is built to help you learn faster, grow smarter, and connect deeper with people who share your drive.
+    </p>
+  </div>
+
+  {/* Right Image Section */}
+  <div className="md:w-1/2 relative mt-[-1rem] md:mt-0">
+    <img
+      src="/diamond.png"
+      alt="Free Learning Illustration"
+      className="w-full h-full object-cover md:object-contain"
+    />
+  </div>
+</div>
           {/* Hero Slider Section */}
-          <div className="w-full flex flex-col items-center min-h-fit lg:min-h-[100vh] px-4 sm:px-6 lg:px-8 pt-4 pb-4">
-            {/* Image Slider Container */}
-            <div className="relative w-full max-w-7xl">
-              {/* Navigation Arrows */}
-              <button
-                onClick={goToPrevious}
-                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-purple-600 rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-300"
-                aria-label="Previous slide"
-              >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
+<div className="w-full flex flex-col items-center min-h-fit lg:min-h-[100vh] px-4 sm:px-6 lg:px-8 pt-12 pb-4">
+  <h1 className="text-black pb-8 text-xl sm:text-3xl md:text-4xl font-bold leading-tight">
+      Upcoming Events 🗓️
+    </h1>
+  {/* Image Slider Container */}
+  <div className="relative w-full max-w-7xl group">
+    {/* Navigation Arrows - Show on hover for desktop */}
+    <button
+      onClick={goToPrevious}
+      className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/30 hover:bg-black/50 text-white rounded-full p-3 shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 lg:opacity-0 focus:opacity-100"
+      aria-label="Previous slide"
+    >
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
 
-              <button
-                onClick={goToNext}
-                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-purple-600 rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-300"
-                aria-label="Next slide"
-              >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+    <button
+      onClick={goToNext}
+      className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/30 hover:bg-black/50 text-white rounded-full p-3 shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 lg:opacity-0 focus:opacity-100"
+      aria-label="Next slide"
+    >
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
 
-              {/* Image Slider */}
-              <div
-                ref={sliderRef}
-                id="image-slider"
-                className="relative w-full h-[45vh] lg:h-[70vh] overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex rounded-xl"
-                onScroll={handleScroll}
-              >
-                {images.map((img, i) => (
-                  <div
-                    key={i}
-                    className="w-full h-full flex-shrink-0 snap-center"
-                  >
-                    <img
-                      src={img}
-                      alt={`Slide ${i + 1}`}
-                      className="w-full h-full object-cover object-center"
-                    />
-                  </div>
-                ))}
-              </div>
+    {/* Image Slider */}
+    <div
+      ref={sliderRef}
+      id="image-slider"
+      className="relative w-full h-[45vh] lg:h-[70vh] overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex rounded-lg lg:rounded-xl"
+      onScroll={handleScroll}
+    >
+      {images.map((img, i) => (
+        <div
+          key={i}
+          className="w-full h-full flex-shrink-0 snap-center"
+        >
+          <img
+            src={img}
+            alt={`Slide ${i + 1}`}
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+      ))}
+    </div>
 
-              {/* Enhanced Navigation Dots */}
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-3">
-                {images.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => scrollToImage(i)}
-                    className={`flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-300 ${
-                      i === currentIndex
-                        ? "scale-125"
-                        : "opacity-70 hover:opacity-100"
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  >
-                    <div
-                      className={`rounded-full transition-all duration-300 ${
-                        i === currentIndex
-                          ? "bg-purple-600 w-3 h-3"
-                          : "bg-purple-300 w-2 h-2 hover:bg-purple-400"
-                      }`}
-                    ></div>
-                  </button>
-                ))}
-              </div>
-            </div>
+    {/* Minimal Navigation Dots */}
+    <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-2">
+      {images.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => scrollToImage(i)}
+          className={`transition-all duration-300 focus:outline-none ${
+            i === currentIndex
+              ? "scale-110"
+              : "opacity-50 hover:opacity-80"
+          }`}
+          aria-label={`Go to slide ${i + 1}`}
+        >
+          <div
+            className={`rounded-full transition-all duration-300 ${
+              i === currentIndex
+                ? "bg-white w-2 h-2"
+                : "bg-white/80 w-1.5 h-1.5"
+            }`}
+          ></div>
+        </button>
+      ))}
+    </div>
+  </div>
 
-            {/* Slide Progress Indicator */}
-            <div className="w-full max-w-7xl mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-1">
-                <div
-                  className="bg-purple-600 h-1 rounded-full transition-all duration-500 ease-out"
-                  style={{
-                    width: `${((currentIndex + 1) / images.length) * 100}%`
-                  }}
-                ></div>
-              </div>
-            </div>
-          </div>
+  {/* Minimal Progress Indicator */}
+  <div className="w-full max-w-7xl mt-6">
+    <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
+      <span className="font-medium">{currentIndex + 1}</span>
+      <span>/</span>
+      <span>{images.length}</span>
+    </div>
+  </div>
+</div>
+
 
           {/* Hackathon Highlight Section */}
           <div className="w-full flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto mt-12 sm:mt-16 px-4 sm:px-6 lg:px-8 gap-6 sm:gap-10">
@@ -276,7 +299,7 @@ function Slider() {
           `}</style>
 
           {/* Event Cards Section */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 sm:gap-6 max-w-7xl w-full mx-auto mt-12 sm:mt-16 px-4">
+          <div className="flex flex-col md:flex-row justify-start items-center gap-4 sm:gap-6 max-w-7xl w-full mx-auto mt-12 mb-16 sm:mt-16 px-4">
             {eventsData.map((event) => (
               <EventCard
                 key={event.id}
@@ -285,15 +308,44 @@ function Slider() {
                 type={event.type}
                 registrationDate={event.registrationDate}
                 web={event.web}
-                toggleNerdathon={toggleNerdathon}
+                status={event.status}
                 className="w-full sm:w-[45%] md:w-[28%] lg:w-[22%] shadow-md rounded-lg overflow-hidden"
               />
             ))}
           </div>
+
+{/* Free Weekend Learning Section */}
+<div className="relative w-[92%] sm:w-[90%] md:w-[85%] mx-auto mt-16 rounded-2xl overflow-hidden bg-gradient-to-br from-[#0c0024] via-[#180040] to-[#3a0091] shadow-xl flex flex-col md:flex-row items-center justify-between">
+  {/* Left Text Section */}
+  <div className="z-10 md:w-1/2 px-6 sm:px-10 lg:px-14 py-6 md:py-0">
+    <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug">
+      Every weekend – learn something new
+      <br />
+      <span className="block text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#b24cff] to-[#00d4ff] mt-2">
+        FOR FREE !!
+      </span>
+    </h1>
+
+    <p className="text-gray-200 text-base sm:text-lg mt-4 max-w-md leading-relaxed">
+      Every Saturday, Auralinks brings you free webinars, podcasts, guest talks, and
+      live activities — sharing insights and knowledge you won’t usually find
+      for free anywhere else.
+    </p>
+  </div>
+
+  {/* Right Image Section */}
+  <div className="md:w-1/2 relative mt-[-1rem] md:mt-0">
+    <img
+      src="/free.png"
+      alt="Free Learning Illustration"
+      className="w-full h-full object-cover md:object-contain"
+    />
+  </div>
+</div>
+
+
         </>
       )}
-    </>
-  );
-}
+    
 
 export default Slider;
