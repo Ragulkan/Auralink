@@ -6,7 +6,7 @@ import eventsData from "./events.json";
 
 function Slider() {
   const images = [
-    "/nerdathon thumbnail.png",
+    "/webinar01.png",
     "/nerdathon01.png",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -175,7 +175,7 @@ function Slider() {
           <div
             ref={sliderRef}
             id="image-slider"
-            className="relative w-full h-[45vh] lg:h-[70vh] overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex rounded-lg lg:rounded-xl"
+            className="relative w-full h-auto overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex rounded-lg lg:rounded-xl"
             onScroll={handleScroll}
           >
             {images.map((img, i) => (
@@ -232,15 +232,16 @@ function Slider() {
         {/* Left Content */}
         <div className="flex flex-col text-start p-4 sm:p-6 md:p-0 md:w-1/2">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-mont font-medium text-black">
-            87% of hackathon participants say <br />
+            87% of techies say <br />
             <span className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              "it helped them land internships or jobs."
+              "community involvement opened doors to internships and collaborations"
             </span>
           </h1>
           <div className="bg-gradient-to-r from-[rgb(169,0,192)] to-[rgb(135,0,154)] border-2 border-[rgb(135,0,154)] p-4 sm:p-6 rounded-xl mt-6 max-w-md mx-auto md:mx-0 shadow-lg">
             <p className="text-white text-sm sm:text-base md:text-lg font-mont">
-              Hackathons are one of the most powerful platforms to demonstrate your skills and attract opportunities with leading global companies.
-            </p>
+Join a tech community that fuels your passion.
+Learn, build, and share ideas with like-minded creators.
+Turn connections into opportunities that reach across the globe            </p>
           </div>
         </div>
 
@@ -269,7 +270,9 @@ function Slider() {
           Where Talent Meets Opportunity 🫱🏻‍🫲
         </h1>
         <p className="mt-4 max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl font-open font-normal text-gray-800">
-          Compete, learn, and grow through hackathons, webinars, and cohorts. Build skills, gain recognition, and unlock your future opportunities.
+          Compete in hackathons, join webinars, and be part of exciting tech events.
+Learn from experts, collaborate with peers, and grow together.
+Build skills that open doors to your next big opportunity.
         </p>
       </div>
 

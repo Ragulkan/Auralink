@@ -18,7 +18,7 @@ function Footer() {
           {/* Social Links */}
           <div className="flex space-x-4">
             <a 
-              href="https://linkedin.com/company/auralinks" 
+              href="https://linkedin.com/company/auralinks-edu" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-8 h-8 rounded bg-white/10 hover:bg-gradient-to-r from-[#b24cff] to-[#00d4ff] flex items-center justify-center transition-all duration-300"
@@ -29,7 +29,7 @@ function Footer() {
             </a>
 
             <a 
-              href="https://instagram.com/auralinks" 
+              href="https://instagram.com/auralinks.in" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-8 h-8 rounded bg-white/10 hover:bg-gradient-to-r from-[#b24cff] to-[#00d4ff] flex items-center justify-center transition-all duration-300"
